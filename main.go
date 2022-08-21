@@ -13,4 +13,5 @@ func main() {
 	flag.Parse()
 
 	utils.ReadFile(*theme)
+
 }

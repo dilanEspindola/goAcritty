@@ -6,7 +6,10 @@ import (
 )
 
 func OverWriteFile(file []byte) []byte {
-	err := os.WriteFile("C:/Users/pc/AppData/Roaming/alacritty/alacritty.yml", file, 0777)
+
+	username := GetUserName()
+
+	err := os.WriteFile("C:/Users/"+username+"/AppData/Roaming/alacritty/alacritty.yml", file, 0777)
 
 	CheckError(err)
 
@@ -16,6 +19,7 @@ func OverWriteFile(file []byte) []byte {
 func ReadFile(theme string) {
 	themes := []string{
 		"ayu-mirage",
+		"ayu-dark",
 		"one-dark",
 		"dracula",
 	}
