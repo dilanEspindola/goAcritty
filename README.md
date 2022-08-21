@@ -2,4 +2,4 @@
 goAcritty
 
 ##
-program made with go. It changes theme to the alacritty's terminal
+program made with go. Change theme to the alacritty's terminal
