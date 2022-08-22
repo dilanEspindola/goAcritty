@@ -1,0 +1,53 @@
+shell:
+  program: powershell
+working_directory: C:\\Users\pc
+font:
+  normal:
+    family: caskaydiacove nerd font
+  size: 12
+window:
+  position:
+    x: 500
+  dimensions:
+    columns: 133
+    lines: 40
+  padding:
+    x: 10
+  startup_mode: Maximized
+  opacity: 0.7
+colors:
+  primary:
+    background: "#1e2127"
+    foreground: "#abb2bf"
+  normal:
+    black: "#1e2127"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#d19a66"
+    blue: "#61afef"
+    cyan: "#56b6c2"
+    white: "#abb2bf"
+  bright:
+    black: "#5c6370"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#d19a66"
+    blue: "#61afef"
+    cyan: "#56b6c2"
+    white: "#ffffff"
+draw_bold_text_with_bright_colors: false
+live_config_reload: true
+scrolling:
+  history: 10000
+  multiplier: 10
+cursor:
+  unfocused_hollow: true
+mouse:
+  double_click:
+    threshold: 300
+  triple_click:
+    threshold: 300
+  hide_when_typing: true
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: true

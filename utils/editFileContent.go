@@ -1,12 +1,12 @@
-package main
+package utils
 
 import (
-	"flag"
+	"io/ioutil"
 
-	"github.com/dilanEspindola/goAcritty/utils"
+	"gopkg.in/yaml.v2"
 )
 
-type YmlConfig struct {
+type YmlConfig2 struct {
 	Shell struct {
 		Program string `yaml:"program"`
 	} `yaml:"shell"`
@@ -84,12 +84,37 @@ type YmlConfig struct {
 	} `yaml:"selection"`
 }
 
-func main() {
-	theme := flag.String("theme", "none", "type a theme")
-	fontStyle := flag.String("f", "none", "type a font")
+func OverWriteFileContent(file []byte, fontstyle string, theme string) []byte {
+	var config YmlConfig2
 
-	flag.Parse()
+	err := yaml.Unmarshal(file, &config)
+	CheckError(err)
 
-	utils.ReadFile(*theme, *fontStyle)
+	if fontstyle != "none" {
+		config.Font.Normal.Family = fontstyle
 
+		newFile, err2 := yaml.Marshal(&config)
+		CheckError(err2)
+
+		err3 := ioutil.WriteFile("./themes/"+theme+".yml", newFile, 0777)
+		CheckError(err3)
+		return newFile
+	}
+	newFile, err2 := yaml.Marshal(&config)
+	CheckError(err2)
+
+	return newFile
+}
+
+func OverWriteFileContentNoTheme(file []byte, fontstyle string) []byte {
+	var config YmlConfig2
+
+	err := yaml.Unmarshal(file, &config)
+	CheckError(err)
+	config.Font.Normal.Family = fontstyle
+
+	newFile, err2 := yaml.Marshal(&config)
+	CheckError(err2)
+
+	return newFile
 }

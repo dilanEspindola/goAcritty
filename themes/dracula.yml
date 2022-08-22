@@ -1,134 +1,55 @@
 shell:
-  # program: "C:\\Windows\\system32\\cmd.exe"
-  # program: "powershell"
-
-# Startup directory
-#
-# Directory the shell is started in. If this is unset, or `None`, the working
-# directory of the parent process will be used.
+  program: ""
 working_directory: C:\\Users\pc
-
-# window.opacity: 0.5
-
 font:
   normal:
-    family: "caskaydiacove nerd font"
-    # style: Regular
+    family: monoid nerd font
   size: 12
-
 window:
   position:
     x: 500
-    y: 100
-
   dimensions:
     columns: 133
     lines: 40
-
   padding:
     x: 10
-    y: 10
-
-  # Startup Mode (changes require restart)
   startup_mode: Maximized
-  # Values for `startup_mode`:
-  #   - Windowed
-  #   - Maximized
-  #   - Fullscreen
-
-  # Window decorations
-  #
-  # Available values:
-  # full: borders and title bar
-  # - none: neither borders nor title bar
-  # transparent: title bar, transparent background and title bar buttons
-  # - buttonless: title bar, transparent background, but no title bar buttons
-  # decorations: full
-
-  # Window opacity as a floating point number from `0.0` to `1.0`.
-  # The value `0.0` is completely transparent and `1.0` is opaque.
-  # opacity: 1
-
-# Use custom cursor colors. If true, display the cursor in the cursor.foreground
-# and cursor.background colors, otherwise invert the colors of the cursor.
-# custom_cursor_colors: true
-
+  opacity: 0.7
 colors:
-  # Default colors
   primary:
     background: "0x292d3e"
     foreground: "0xbbc5ff"
-
-  # Normal colors
   normal:
-    black: "#101010"
-    red: "#f07178"
-    green: "#c3e88d"
-    yellow: "#ffcb6b"
-    blue: "#82aaff"
-    magenta: "#c792ea"
-    cyan: "#89ddff"
-    white: "#d0d0d0"
-
-  # Bright colors
+    black: '#101010'
+    red: '#f07178'
+    green: '#c3e88d'
+    yellow: '#ffcb6b'
+    blue: '#82aaff'
+    magenta: '#c792ea'
+    cyan: '#89ddff'
+    white: '#d0d0d0'
   bright:
-    black: "#434758"
-    red: "#ff8b92"
-    green: "#ddffa7"
-    yellow: "#ffe585"
-    blue: "#9cc4ff"
-    magenta: "#e1acff"
-    cyan: "#a3f7ff"
-    white: "#ffffff"
-
+    black: '#434758'
+    red: '#ff8b92'
+    green: '#ddffa7'
+    yellow: '#ffe585'
+    blue: '#9cc4ff'
+    magenta: '#e1acff'
+    cyan: '#a3f7ff'
+    white: '#ffffff'
 draw_bold_text_with_bright_colors: false
-
 live_config_reload: true
-
 scrolling:
   history: 10000
   multiplier: 10
-
 cursor:
-  # Cursor style
-  #
-  # Values for 'style':
-  #   - ▇ Block
-  #   - _ Underline
-  #   - | Beam
-  # style:
-  # shape: Beam
-  # blinking: on
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
   unfocused_hollow: true
-
-# key_bindings:
-#   - { key: V, mods: Control|Shift, action: Paste }
-#   - { key: V, mods: Control, action: Paste }
-#   - { key: C, mods: Control|Shift, action: Copy }
-#   - { key: C, mods: Control, action: Copy }
-#     - { key: , mods: Control, action: SpawnNewInstance }
-# - { key: Q, mods: Alt, action: SpawnNewInstance }
-#   - { key: Return, mods: Alt, action: ToggleFullscreen }
-#   - { key: Plus, mods: Control, action: IncreaseFontSize }
-#   - { key: Minus, mods: Control, action: DecreaseFontSize }
-#   - { key: Key0, mods: Control, action: ResetFontSize }
-
 mouse:
-  # Click settings
-  #
-  # The `double_click` and `triple_click` settings control the time
-  # alacritty should wait for accepting multiple clicks as one double
-  # or triple click.
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-
-  # If this is `true`, the cursor is temporarily hidden when typing.
+  double_click:
+    threshold: 300
+  triple_click:
+    threshold: 300
   hide_when_typing: true
-
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
-
-  # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: true

@@ -16,21 +16,35 @@ func OverWriteFile(file []byte) []byte {
 	return file
 }
 
-func ReadFile(theme string) {
+func ReadFile(theme, fontstyle string) {
 	themes := []string{
 		"ayu-mirage",
-		"ayu-dark",
 		"one-dark",
 		"dracula",
 	}
 
+	if theme == "none" {
+		username := GetUserName()
+		file, err := os.ReadFile("C:/Users/" + username + "/AppData/Roaming/alacritty/alacritty.yml")
+		CheckError(err)
+		newFile := OverWriteFileContentNoTheme(file, fontstyle)
+		OverWriteFile(newFile)
+		os.Exit(3)
+	}
 	for _, value := range themes {
 		if value == theme {
 			file, errFile := os.ReadFile("./themes/" + theme + ".yml")
 			CheckError(errFile)
-			OverWriteFile(file)
+			newFile := OverWriteFileContent(file, fontstyle, theme)
+			if newFile != nil {
+				OverWriteFile(newFile)
+			} else {
+				OverWriteFile(file)
+			}
 			os.Exit(3)
 		}
 	}
 	fmt.Println("theme does not exist")
 }
+
+// fix bug when theme change font must be not change
