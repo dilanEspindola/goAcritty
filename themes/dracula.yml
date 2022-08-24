@@ -1,9 +1,9 @@
 shell:
-  program: ""
+  program: "powershell"
 working_directory: C:\\Users\pc
 font:
   normal:
-    family: monoid nerd font
+    family: firacode nerd font
   size: 12
 window:
   position:
@@ -14,29 +14,29 @@ window:
   padding:
     x: 10
   startup_mode: Maximized
-  opacity: 0.7
+  opacity: 0.8
 colors:
   primary:
     background: "0x292d3e"
     foreground: "0xbbc5ff"
   normal:
-    black: '#101010'
-    red: '#f07178'
-    green: '#c3e88d'
-    yellow: '#ffcb6b'
-    blue: '#82aaff'
-    magenta: '#c792ea'
-    cyan: '#89ddff'
-    white: '#d0d0d0'
+    black: "#101010"
+    red: "#f07178"
+    green: "#c3e88d"
+    yellow: "#ffcb6b"
+    blue: "#82aaff"
+    magenta: "#c792ea"
+    cyan: "#89ddff"
+    white: "#d0d0d0"
   bright:
-    black: '#434758'
-    red: '#ff8b92'
-    green: '#ddffa7'
-    yellow: '#ffe585'
-    blue: '#9cc4ff'
-    magenta: '#e1acff'
-    cyan: '#a3f7ff'
-    white: '#ffffff'
+    black: "#434758"
+    red: "#ff8b92"
+    green: "#ddffa7"
+    yellow: "#ffe585"
+    blue: "#9cc4ff"
+    magenta: "#e1acff"
+    cyan: "#a3f7ff"
+    white: "#ffffff"
 draw_bold_text_with_bright_colors: false
 live_config_reload: true
 scrolling:

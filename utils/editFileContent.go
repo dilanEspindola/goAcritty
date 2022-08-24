@@ -2,11 +2,12 @@ package utils
 
 import (
 	"io/ioutil"
+	"os"
 
 	"gopkg.in/yaml.v2"
 )
 
-type YmlConfig2 struct {
+type YmlConfig struct {
 	Shell struct {
 		Program string `yaml:"program"`
 	} `yaml:"shell"`
@@ -84,8 +85,28 @@ type YmlConfig2 struct {
 	} `yaml:"selection"`
 }
 
+func OverWriteFileContentNotFont(file []byte, theme string) []byte {
+	var config YmlConfig
+	var config2 YmlConfig
+
+	err := yaml.Unmarshal(file, &config)
+	CheckError(err)
+	alacrittyFont := config.Font.Normal.Family
+
+	fileTheme, err := os.ReadFile("./themes/" + theme + ".yml")
+	CheckError(err)
+	err2 := yaml.Unmarshal(fileTheme, &config2)
+	CheckError(err2)
+	config2.Font.Normal.Family = alacrittyFont
+
+	newFile, err3 := yaml.Marshal(&config2)
+	CheckError(err3)
+
+	return newFile
+}
+
 func OverWriteFileContent(file []byte, fontstyle string, theme string) []byte {
-	var config YmlConfig2
+	var config YmlConfig
 
 	err := yaml.Unmarshal(file, &config)
 	CheckError(err)
@@ -107,7 +128,7 @@ func OverWriteFileContent(file []byte, fontstyle string, theme string) []byte {
 }
 
 func OverWriteFileContentNoTheme(file []byte, fontstyle string) []byte {
-	var config YmlConfig2
+	var config YmlConfig
 
 	err := yaml.Unmarshal(file, &config)
 	CheckError(err)
