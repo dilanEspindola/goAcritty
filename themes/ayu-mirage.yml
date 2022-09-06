@@ -3,7 +3,7 @@ shell:
 working_directory: C:\\Users\pc
 font:
   normal:
-    family: caskaydiacove nerd font
+    family: jetbrainsmono nf
   size: 12
 window:
   position:
@@ -14,7 +14,7 @@ window:
   padding:
     x: 10
   startup_mode: Maximized
-  opacity: 0.8
+  opacity: 0.91
 colors:
   primary:
     background: '#202734'

@@ -3,7 +3,7 @@ shell:
 working_directory: C:\\Users\pc
 font:
   normal:
-    family: firacode nerd font
+    family: casakydiacove nerd font
   size: 12
 window:
   position:
@@ -14,29 +14,29 @@ window:
   padding:
     x: 10
   startup_mode: Maximized
-  opacity: 0.9
+  opacity: 0.91
 colors:
   primary:
-    background: "0x292d3e"
-    foreground: "0xbbc5ff"
+    background: "#1a1b26"
+    foreground: "#c0caf5"
   normal:
-    black: '#101010'
-    red: '#f07178'
-    green: '#c3e88d'
-    yellow: '#ffcb6b'
-    blue: '#82aaff'
-    magenta: '#c792ea'
-    cyan: '#89ddff'
-    white: '#d0d0d0'
+    black: "#15161e"
+    red: "#f7768e"
+    green: "#9ece6a"
+    yellow: "#e0af68"
+    blue: "#7aa2f7"
+    magenta: "#bb9af7"
+    cyan: "#7dcfff"
+    white: "#a9b1d6"
   bright:
-    black: '#434758'
-    red: '#ff8b92'
-    green: '#ddffa7'
-    yellow: '#ffe585'
-    blue: '#9cc4ff'
-    magenta: '#e1acff'
-    cyan: '#a3f7ff'
-    white: '#ffffff'
+    black: "#414868"
+    red: "#f7768e"
+    green: "#9ece6a"
+    yellow: "#e0af68"
+    blue: "#7aa2f7"
+    magenta: "#bb9af7"
+    cyan: "#7dcfff"
+    white: "#c0caf5"
 draw_bold_text_with_bright_colors: false
 live_config_reload: true
 scrolling:

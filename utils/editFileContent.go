@@ -105,7 +105,7 @@ func OverWriteFileContentNotFont(file []byte, theme string) []byte {
 	return newFile
 }
 
-func OverWriteFileContent(file []byte, fontstyle string, theme string) []byte {
+func OverWriteFileContent(file []byte, fontstyle string, theme string, opacity float64) []byte {
 	var config YmlConfig
 
 	err := yaml.Unmarshal(file, &config)
@@ -113,6 +113,7 @@ func OverWriteFileContent(file []byte, fontstyle string, theme string) []byte {
 
 	if fontstyle != "none" {
 		config.Font.Normal.Family = fontstyle
+		config.Window.Opacity = opacity
 
 		newFile, err2 := yaml.Marshal(&config)
 		CheckError(err2)
@@ -133,6 +134,41 @@ func OverWriteFileContentNoTheme(file []byte, fontstyle string) []byte {
 	err := yaml.Unmarshal(file, &config)
 	CheckError(err)
 	config.Font.Normal.Family = fontstyle
+
+	newFile, err2 := yaml.Marshal(&config)
+	CheckError(err2)
+
+	return newFile
+}
+
+func OverWriteFileContentNoOpacity(file []byte, theme string) []byte {
+	var config YmlConfig
+	var config2 YmlConfig
+
+	err := yaml.Unmarshal(file, &config)
+	CheckError(err)
+
+	fileTheme, err := os.ReadFile("./themes/" + theme + ".yml")
+	CheckError(err)
+	err2 := yaml.Unmarshal(fileTheme, &config2)
+	CheckError(err2)
+
+	config2.Window.Opacity = config.Window.Opacity
+
+	newFile, err2 := yaml.Marshal(&config2)
+	CheckError(err2)
+
+	return newFile
+
+}
+
+func OverWriteFileContentOpacity(file []byte, opacity float64) []byte {
+	var config YmlConfig
+
+	err := yaml.Unmarshal(file, &config)
+	CheckError(err)
+
+	config.Window.Opacity = opacity
 
 	newFile, err2 := yaml.Marshal(&config)
 	CheckError(err2)

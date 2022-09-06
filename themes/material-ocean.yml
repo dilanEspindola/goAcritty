@@ -3,7 +3,7 @@ shell:
 working_directory: C:\\Users\pc
 font:
   normal:
-    family: firacode nerd font
+    family: jetbrainsmono nf
   size: 12
 window:
   position:
@@ -14,29 +14,29 @@ window:
   padding:
     x: 10
   startup_mode: Maximized
-  opacity: 0.9
+  opacity: 0.91
 colors:
   primary:
-    background: "0x292d3e"
-    foreground: "0xbbc5ff"
+    background: "#0f111a"
+    foreground: "#8f93a2"
   normal:
-    black: '#101010'
-    red: '#f07178'
-    green: '#c3e88d'
-    yellow: '#ffcb6b'
-    blue: '#82aaff'
-    magenta: '#c792ea'
-    cyan: '#89ddff'
-    white: '#d0d0d0'
+    black: "#546e7a"
+    red: "#ff5370"
+    green: "#c3e88d"
+    yellow: "#ffcb6b"
+    blue: "#82aaff"
+    magenta: "#c792ea"
+    cyan: "#89ddff"
+    white: "#ffffff"
   bright:
-    black: '#434758'
-    red: '#ff8b92'
-    green: '#ddffa7'
-    yellow: '#ffe585'
-    blue: '#9cc4ff'
-    magenta: '#e1acff'
-    cyan: '#a3f7ff'
-    white: '#ffffff'
+    black: "#546e7a"
+    red: "#ff5370"
+    green: "#c3e88d"
+    yellow: "#ffcb6b"
+    blue: "#82aaff"
+    magenta: "#c792ea"
+    cyan: "#89ddff"
+    white: "#FFFFFF"
 draw_bold_text_with_bright_colors: false
 live_config_reload: true
 scrolling:
